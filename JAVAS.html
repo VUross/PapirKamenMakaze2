@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="Makaze()">  Makaze </button>
+<button onclick="Kamen()"> Kamen </button>
+<button onclick="Papir()"> Papir </button><br>
+
+<button onclick="Quit()"> !dosta! </button>
+
+<script>
+	var kbr = 0;
+	var kmbr = 0;
+	function Makaze() {
+		korisnik = "MAKAZE";
+		kbr = 2;
+		Komps();
+		Provera();
+	}
+
+	function Kamen() {
+		korisnik = "KAMEN";
+		kbr = 3;
+		Komps();
+		Provera();
+	}
+
+	function Papir() {
+		korisnik = "PAPIR";
+		kbr = 1;
+		Komps();
+		Provera();
+	}
+
+	function Quit() {
+		korisnik = "stop"
+	}
+
+    function Komps() {
+	    Kmp = Math.random()*100;
+	    if (Kmp<=34) {
+	    	Kompjuter="PAPIR";
+	    	kmbr=1;
+	    } else if (Kmp<=67) {
+	    	Kompjuter="KAMEN";
+	    	kmbr=3;
+	    } else {
+	    	Kompjuter="MAKAZE"
+	    	kmbr=2;
+	    }
+	}
+
+    function Provera() {
+    	if (Kompjuter===korisnik) {
+    	alert("Jednake mogucnosti. Pokusajte ponovo!")
+    	}
+
+	    if ((Kompjuter==="PAPIR"&&korisnik==="MAKAZE")||(Kompjuter==="PAPIR"&&korisnik==="KAMEN")||(Kompjuter==="MAKAZE"&&korisnik==="KAMEN")) {
+	    	alert("Korisnice bitnago pobedijo si!!!");
+	    } else if (kmbr>kbr) {
+	    	alert("Kompjuter je pobedio, pokusajte ponovo!!!")
+	    }
+	}
+
+</script>
+
+</body>
+</html>
